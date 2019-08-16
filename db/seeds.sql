@@ -21,7 +21,7 @@ INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `crea
 
 INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Venyasa all levels','yoga', 'heated', 90, 30, SYSDATE(), SYSDATE());
 INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Pilates','fitness', 'advanced level', 60, 20, SYSDATE(), SYSDATE());
-INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Abs & Ass','fitness', 'strenght training', 50, 40, SYSDATE(), SYSDATE());
+INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Abs & Ass','fitness', 'strenght training', 60, 40, SYSDATE(), SYSDATE());
 
 INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ( 'AROMA OIL MASSAGE', 'massage', 'This massage incorporates light to medium pressure, long strokes and kneading to reduce tension, soothe sore muscles and stimulate circulation.',60, 85, SYSDATE(), SYSDATE());
 INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ( 'THAI MASSAGE','massage', 'Traditional thai massage', 60, 75, SYSDATE(), SYSDATE());
@@ -31,7 +31,7 @@ INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `crea
 INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('French Manicure', 'nails','', 30, 45, SYSDATE(), SYSDATE());
 INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Blowout + Styling', 'hair-barber', 'A gorgeous bombshell blowout with your choice of dry style.',   60, 80, SYSDATE(), SYSDATE());
 INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Bridal Makeup', 'make-up', 'Full makeup',  60, 120, SYSDATE(), SYSDATE());
-INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Personal Shopping', 'fashion','',  300, 180, SYSDATE(), SYSDATE());
+INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Personal Shopping', 'fashion','',  180, 100, SYSDATE(), SYSDATE());
 INSERT INTO services(`name`, `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ('Closet Cleanse', 'fashion', '',  150, 16, SYSDATE(), SYSDATE());
 
 

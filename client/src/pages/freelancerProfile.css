@@ -1,33 +1,53 @@
-.react-datepicker__day
-
-{
-    width:3.5rem ;
-    line-height:3rem;
- 
+.react-datepicker__day {
+    width: 3.5rem !important;
+    line-height: 3rem;
 }
 
-.react-datepicker__day-name  {
-    width:3.1rem ;
-    line-height:3rem;
+.react-datepicker__day-name {
+    width: 3.1rem !important;
+    line-height: 3rem;
 }
-.react-datepicker__day, .react-datepicker__header{
- font-size: 1.5em;
-} 
-
-.react-datepicker__current-month{
- font-size: 1.3em;
+.react-datepicker__day,
+.react-datepicker__header {
+    font-size: 1.5em;
 }
 
-.react-datepicker__week div{
-  margin:0;
-  border: 0.1px solid #F5F5F5;
-
+.react-datepicker__current-month {
+    font-size: 1.3em;
 }
 
-.react-datepicker__month{
-margin:0;
+.react-datepicker__week div {
+    margin: 0;
+    border: 0.1px solid #f5f5f5;
+}
+
+.react-datepicker__month {
+    margin: 0;
 }
 
 .freelancer-content {
-  margin-top: -100px;
+    margin-top: -100px;
+}
+
+section {
+    display: flex;
+}
+.apptInfo {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+.time {
+    display: flex;
+    width: 400px;
+}
+
+.btn {
+    margin: 5px;
 }
