@@ -1,11 +1,11 @@
 .react-datepicker__day {
     width: 3.5rem !important;
-    line-height: 3rem;
+    line-height: 3rem !important;
 }
 
 .react-datepicker__day-name {
     width: 3.1rem !important;
-    line-height: 3rem;
+    line-height: 3rem !important;
 }
 .react-datepicker__day,
 .react-datepicker__header {

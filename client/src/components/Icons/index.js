@@ -34,7 +34,7 @@ const IconCard = props => {
                 <Row>
                     {icons.map(icon => {
                         return (
-                            <div className="col-lg-3">
+                            <div className="col-sm-12 col-md-6 col-lg-3" key={icon.id}>
                                 <Card>
                                     <CardImg
                                         top

@@ -1,4 +1,5 @@
 import './style.css';
+import logo from '../../assets/img/logo.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -32,13 +33,20 @@ export default class NavbarComp extends React.Component {
         });
     }
     render() {
+        if (window.location.pathname == '/') {
+            return null;
+        }
+
         return (
             <div>
                 <Navbar color="teal" light expand="md">
-                    <NavbarBrand href="/">Beautify</NavbarBrand>
+                    <NavbarBrand>
+                        <img src={logo} />
+                        <Link to="/"> beautify</Link>
+                    </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                        <Nav navbar>
                             <NavItem>
                                 <Link to="/services/">Services</Link>
                             </NavItem>

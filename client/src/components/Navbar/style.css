@@ -2,74 +2,50 @@ nav.navbar.navbar-default {
     margin-bottom: 0;
     background: #07ddbd;
     color: white;
-  } 
+}
 
-  nav {
-    color: white;
-  }
-  
-  nav.navbar {
+.navbar {
     background: #07ddbd;
-    color: white;
-  } 
+    padding: 2px;
+    display: flex;
+    max-height: 110px;
+}
 
-  .navbar {
-    background: #07ddbd;
-    color: white;
-    height: 60px;
-  }
-  
-  button {
-    color: white;
-  }
+.navbar-brand a {
+    font-family: 'Sacramento', cursive !important;
+    text-decoration: none;
+    margin-left: -25px;
+    color: whitesmoke;
+    font-size: 2.5em !important;
+    text-transform: lowercase;
+}
 
-  button.mr-2.navbar-toggler {
-    color: white;
-  }
+.nav-item a {
+    color: whitesmoke;
 
-  span.navbar-toggler-icon {
+    font-size: 1.1em !important;
+    margin-right: 15px;
+}
+
+.nav-item a:hover {
     color: white;
-    
-  }
-  .navbar-brand {
-    color: white;
-    font-size: 30px;
+    text-decoration: none;
+}
+
+.navbar-brand img {
     margin-top: -8px;
-  }
-  
-  nav.navbar-nav.nav-item {
-    text-align: right;
-    color: white;
-    margin-top: -4px;
-  }
-  
-  .nav-item {
-    text-align: right;
-    color: white;
-    margin-top: -4px;
-  }
+    width: 15%;
+    height: 15%;
+}
 
-  .nav-item:hover {
-    color: white;
-  }
-  
-  a.nav-link {
-    text-align: right;
-    color: white;
-    font-size: 20px;
-    margin-top: -4px;
-  } 
-
-  a.nav-link:hover {
-    color: white;
-
-  }
-
-  .nav-link {
-    color: white;
-    margin-top: -4px;
-  }
-
-  .nav-link:hover {
-    color: white;
-  }
+@media (min-width: 974px) {
+    .navbar-brand img {
+        width: 13%;
+        height: 13%;
+    }
+}
+@media (max-width: 614px) {
+    .navbar-brand img {
+        text-align: center;
+    }
+}

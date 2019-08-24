@@ -9,9 +9,9 @@ import Hero from '../Hero';
 import ProviderCard from '../ProviderCard';
 import IconCard from '../Icons';
 // import Navbar from "../Navbar";
-import NavbarComp from '../Navbar';
 import Slider from '../Slider';
 import AppContext from '../../appContext';
+import NavbarComp from '../Navbar';
 
 export default class ServicesList extends Component {
     constructor(props) {

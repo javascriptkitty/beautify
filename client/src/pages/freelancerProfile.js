@@ -29,8 +29,15 @@ export default class ProviderProfile extends Component {
             userId: 1,
             selectedServiceId: this.props.match.params.service,
             serviceDuration: 30,
-            showConfirm: true
+            showConfirm: true,
+            servSnown: false
         };
+    }
+
+    handleClick() {
+        this.setState({
+            servSnown: !this.state.servSnown
+        });
     }
 
     onSelectTime(time) {
@@ -235,34 +242,44 @@ export default class ProviderProfile extends Component {
 
                             <br />
                             <br />
-                            <br />
 
-                            <h1> All Services</h1>
-                            <hr />
-                            {this.state.services.map(service => {
-                                const url = `/providers/id/${this.state.providerId}/service/${
-                                    service.id
-                                }`;
-                                debugger;
-                                return (
-                                    <div>
-                                        <ServiceCard
-                                            key={service.name}
-                                            name={service.name}
-                                            description={service.description}
-                                            duration={service.duration}
-                                            price={service.price}
-                                        />
-                                        <Link to={url} className="btn">
-                                            {' '}
-                                            Book!{' '}
-                                        </Link>
-                                        <br />
-                                        <hr />
-                                        <br />
-                                    </div>
-                                );
-                            })}
+                            {this.state.servSnown ? (
+                                <div>
+                                    <h1> All Services</h1>
+                                    <hr />
+                                    {this.state.services.map(service => {
+                                        const url = `/providers/id/${
+                                            this.state.providerId
+                                        }/service/${service.id}`;
+                                        debugger;
+                                        return (
+                                            <div className="allServices" key={service.name}>
+                                                <ServiceCard
+                                                    name={service.name}
+                                                    description={service.description}
+                                                    duration={service.duration}
+                                                    price={service.price}
+                                                />
+                                                <div>
+                                                    <Link to={url} className="btn">
+                                                        {' '}
+                                                        Book!{' '}
+                                                    </Link>
+                                                </div>
+                                                <br />
+                                                <hr />
+                                                <br />
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            ) : (
+                                <div>
+                                    <a className="btn" handleClick={this.handleClick}>
+                                        View all services
+                                    </a>
+                                </div>
+                            )}
                         </Container>
                     </div>
                 </Wrapper>

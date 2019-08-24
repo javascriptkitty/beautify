@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/img/logo.png';
 
 function AnimatedBG(props) {
     return (
@@ -16,11 +17,12 @@ function AnimatedBG(props) {
                     <span />
                     <span />
                     <span />
-                    <span />
                     <div className="container text-center">
                         <br />
+
+                        <img id="logo" src={logo} />
                         <h1 className="animated lightSpeedIn" id="beautify">
-                            Beautify
+                            beautify
                         </h1>
 
                         <h5 id="subtitle">Health & Wellness On Demand...At Your Home</h5>

@@ -4,18 +4,16 @@
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
-    
-  
 }
 
 .carousel-item {
     max-height: 325px;
     height: 300px;
     margin-top: -5px;
+
     /* background-size: cover; */
     /* background-position: center; */
     /* background-position: top; */
-    
 }
 
 .carousel-inner {
@@ -42,9 +40,10 @@ h3 {
     text-transform: uppercase;
     padding-bottom: 60px;
     font-weight: bolder;
-} 
-
-
+}
+.carousel-caption h3 {
+    color: #07ddbd;
+}
 
 /* 
 .UncontrolledCarousel {

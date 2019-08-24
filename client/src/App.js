@@ -12,8 +12,13 @@ import SignUp from './components/SignUp';
 import axios from 'axios';
 import AppContext from './appContext';
 import AnimatedBG from './components/Animated-bg';
-// import logo from './logo.svg';
-// import './App.css';
+import { withRouter } from 'react-router-dom';
+
+// const NavbarComp = (props) => {
+//     const { location } = props;
+//     if (location.pathname.match('/')){
+//       return null;
+//     }
 
 class App extends React.Component {
     state = {
@@ -29,7 +34,6 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        debugger;
         axios.get('/auth/user').then(res => {
             console.log('AUTH/USER: ', res);
             this.setState({
@@ -43,33 +47,37 @@ class App extends React.Component {
     };
 
     render() {
+        debugger;
+        const showNav = window.location.pathname != '/';
         return (
             <AppContext.Provider value={this.state}>
-                {!this.state.isLoggedIn ? (
-                    <div>
-                        <LogIn />
-                        <SignUp />
-                    </div>
-                ) : (
-                    <Router>
-                        <NavbarComp />
-                        <Route
-                            path="/"
-                            exact
-                            component={() => <AnimatedBG logout={this.logout} />}
-                        />
-                        <Route path="/services" component={ServicesList} />
-                        <Route path="/providers/new" component={CreateProvider} />
-                        <Route
-                            path="/providers/id/:id/service/:service"
-                            component={ProviderProfile}
-                        />
+                <Router>
+                    {!this.state.isLoggedIn ? (
+                        <div>
+                            <LogIn />
+                            <SignUp />
+                        </div>
+                    ) : (
+                        <div>
+                            <Route path="/" component={NavbarComp} />
+                            <Route
+                                path="/"
+                                exact
+                                component={() => <AnimatedBG logout={this.logout} />}
+                            />
+                            <Route path="/services" component={ServicesList} />
+                            <Route path="/providers/new" component={CreateProvider} />
+                            <Route
+                                path="/providers/id/:id/service/:service"
+                                component={ProviderProfile}
+                            />
 
-                        {/* <Route path="/provider/:id/edit" component={EditeProfile} /> */}
-                        <Route path="/user/profile" component={UserProfile} />
-                        {/* <Route path="/user" component={CreateUser} /> */}
-                    </Router>
-                )}
+                            {/* <Route path="/provider/:id/edit" component={EditeProfile} /> */}
+                            <Route path="/user/profile" component={UserProfile} />
+                            {/* <Route path="/user" component={CreateUser} /> */}
+                        </div>
+                    )}
+                </Router>
             </AppContext.Provider>
         );
     }
