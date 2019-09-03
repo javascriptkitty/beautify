@@ -73,11 +73,11 @@ function getAvailableDates(slots, service, month) {
     const momentDay = moment(month, 'YYYY-MM'); //1st day of current month
     const days = momentDay.daysInMonth(); //31
 
-    const dayOffset = moment().date() - 1;
-    momentDay.add(dayOffset, 'day');
+    // const dayOffset = moment().date() - 1;
+    // momentDay.add(dayOffset, 'day');
 
     const workingDays = [];
-    for (let i = dayOffset; i < days; i++) {
+    for (let i = 0; i < days; i++) {
         workingDays.push(momentDay.format('YYYY-MM-DD'));
         momentDay.add(1, 'day');
     }

@@ -3,12 +3,12 @@ import axios from 'axios';
 import Container from '../components/Container';
 import Wrapper from '../components/Wrapper';
 import Hero from '../components/Hero';
-import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import ServiceCard from '../components/ServiceCard';
 import DatePicker from 'react-datepicker';
 import './freelancerProfile.css';
 import { Link } from 'react-router-dom';
+import { Hub } from '@babel/traverse';
 const moment = require('moment');
 
 export default class ProviderProfile extends Component {
@@ -22,6 +22,7 @@ export default class ProviderProfile extends Component {
             services: [],
             monthSlots: [],
             daySlots: [],
+            selectedMonth: moment().format('YYYY-MM'),
             selectedDate: null,
             selectedTime: null,
             selectedSlot: '',
@@ -34,26 +35,31 @@ export default class ProviderProfile extends Component {
         };
     }
 
-    handleClick() {
+    handleClick = () => {
         this.setState({
             servSnown: !this.state.servSnown
         });
-    }
+    };
 
     onSelectTime(time) {
         this.setState({ selectedTime: time });
     }
 
+    onMonthChange = selectedMonth => {
+        const monthFormated = moment(selectedMonth).format('YYYY-MM');
+        this.setState({ selectedMonth: monthFormated });
+        this.getSlotsForMonth(monthFormated);
+    };
     onSelectDate = selectedDate => {
         this.setState({ selectedDate });
         this.getSlotsForDay(selectedDate);
         this.setState({ showConfirm: true });
     };
 
-    getSlotsForMonth() {
+    getSlotsForMonth(month) {
         const monthSlotsUrl = `/api/providers/${
             this.state.providerId
-        }/slots/month/2019-08?serviceId=${this.state.selectedServiceId}`;
+        }/slots/month/${month}?serviceId=${this.state.selectedServiceId}`;
         axios.get(monthSlotsUrl).then(res => {
             const monthSlots = res.data.map(slot => new Date(slot));
             this.setState({ monthSlots });
@@ -100,7 +106,7 @@ export default class ProviderProfile extends Component {
 
     componentDidMount() {
         this.getProvidersInfo(this.props.match.params.id);
-        this.getSlotsForMonth('2019-08');
+        this.getSlotsForMonth(this.state.selectedMonth);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -109,7 +115,7 @@ export default class ProviderProfile extends Component {
         });
         this.getProvidersInfo(nextProps.match.params.id);
 
-        this.getSlotsForMonth('2019-08');
+        this.getSlotsForMonth(this.state.selectedMonth);
     }
 
     getProvidersInfo = id => {
@@ -174,7 +180,9 @@ export default class ProviderProfile extends Component {
                                         inline
                                         selected={this.state.selectedDate}
                                         onChange={this.onSelectDate}
+                                        onMonthChange={this.onMonthChange}
                                         isOpen={true}
+                                        minDate={moment().toDate()}
                                         includeDates={this.state.monthSlots}
                                         forceShowMonthNavigation={true}
                                     />
@@ -275,7 +283,7 @@ export default class ProviderProfile extends Component {
                                 </div>
                             ) : (
                                 <div>
-                                    <a className="btn" handleClick={this.handleClick}>
+                                    <a className="btn" onClick={this.handleClick}>
                                         View all services
                                     </a>
                                 </div>
