@@ -5,11 +5,7 @@
     padding-top: 20px;
 }
 
-.email {
-    margin: 5px;
-    padding: 5px;
-}
-
+.email,
 .password {
     margin: 5px;
     padding: 5px;
@@ -23,7 +19,6 @@
     border: 1px;
     border-style: solid;
     border-color: white;
-
 }
 
 form.signup {
@@ -32,13 +27,14 @@ form.signup {
 
 .header {
     position: relative;
-    font-size: 80px;
-    /* font-stretch: wider; */
-    font-family: inherit;
+    font-size: 100px;
+
+    font-family: 'Sacramento', cursive !important;
     color: white;
     font-weight: 200;
     text-align: center;
-    padding-top: 180px;
+    padding-top: 200px;
+    margin-bottom: 50px;
 }
 
 .header2 {
@@ -47,5 +43,5 @@ form.signup {
     font-family: inherit;
     text-align: center;
     color: white;
-    font-weight: 200;
+    font-weight: 150;
 }

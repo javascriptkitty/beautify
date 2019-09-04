@@ -1,3 +1,7 @@
 a {
     font-size: 0.9em !important;
 }
+
+.serviceDiv {
+    line-height: 1.4;
+}

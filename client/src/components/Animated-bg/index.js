@@ -8,6 +8,7 @@ function AnimatedBG(props) {
         <div>
             <section className="content">
                 <div className="bgPulse">
+                    {/* <span />
                     <span />
                     <span />
                     <span />
@@ -15,8 +16,7 @@ function AnimatedBG(props) {
                     <span />
                     <span />
                     <span />
-                    <span />
-                    <span />
+                    <span /> */}
                     <div className="container text-center">
                         <br />
 

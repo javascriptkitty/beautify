@@ -1,88 +1,87 @@
-import React, { Component } from "react";
-import axios from "axios";
-import "./style.css";
+import React, { Component } from 'react';
+import axios from 'axios';
+import './style.css';
 // import Hero from "../Hero";
-import AnimatedBG2 from "../Animated-bg2";
-
+import AnimatedBG2 from '../Animated-bg2';
 
 class LogIn extends Component {
-
     state = {
-        email: "",
-        password: ""
-     };
+        email: '',
+        password: ''
+    };
 
-     handleInputChange = event => {
+    handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
-           [name]: value
+            [name]: value
         });
-     };
+    };
 
-     handleFormSubmit = event => {
+    handleFormSubmit = event => {
         event.preventDefault();
-  
-        fetch("/auth/login", {
-           method: "POST",
-           credentials: "include",
-           mode: "cors",
-           body: JSON.stringify({
-              email: this.state.email,
-              password: this.state.password
-           }),
-           headers: new Headers({
-              "Content-Type": "application/json"
-           })
+
+        fetch('/auth/login', {
+            method: 'POST',
+            credentials: 'include',
+            mode: 'cors',
+            body: JSON.stringify({
+                email: this.state.email,
+                password: this.state.password
+            }),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
         })
-           .then(response => {
-              console.log("LOGIN RESPONSE: ", response);
-              window.location.href = "/";
-           })
-           .catch(err => {
-              console.log(err);
-           });
-  
+            .then(response => {
+                console.log('LOGIN RESPONSE: ', response);
+                window.location.href = '/';
+            })
+            .catch(err => {
+                console.log(err);
+            });
+
         this.setState({
-           email: "",
-           password: ""
+            email: '',
+            password: ''
         });
-     };
+    };
 
-
-     render() {
+    render() {
         return (
-         <div>
-         <AnimatedBG2 />
-         <h1 className="header">Welcome To Beautify</h1>
-         <hr />
-         <h2 className="header2">Please login to your account or sign up:</h2> 
-         {/* <Hero backgroundImage="https://images.pexels.com/photos/91147/pexels-photo-91147.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height = "350px">
+            <div>
+                <AnimatedBG2 />
+                <h1 className="header">Welcome to beautify</h1>
+                <hr />
+                <h2 className="header2">Please login to your account or sign up:</h2>
+                {/* <Hero backgroundImage="https://images.pexels.com/photos/91147/pexels-photo-91147.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height = "350px">
          <h1>Login</h1>
          </Hero> */}
-           <div className = "background">
-              <form className = "login">
-                    <input className = "email"
-                       value={this.state.email}
-                       name="email"
-                       onChange={this.handleInputChange}
-                       type="text"
-                       placeholder="Username"
-                    />
-                    <input className = "password"
-                       value={this.state.password}
-                       name="password"
-                       onChange={this.handleInputChange}
-                       type="password"
-                       placeholder="Password"
-                    />
-                    <button onClick={this.handleFormSubmit} className = "button">
-                       Log In
-                    </button>
-              </form>
-           </div>
-           </div>
+                <div className="background">
+                    <form className="login">
+                        <input
+                            className="email"
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="Username"
+                        />
+                        <input
+                            className="password"
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.handleInputChange}
+                            type="password"
+                            placeholder="Password"
+                        />
+                        <button onClick={this.handleFormSubmit} className="button">
+                            Log In
+                        </button>
+                    </form>
+                </div>
+            </div>
         );
-     }
+    }
 }
 
 export default LogIn;

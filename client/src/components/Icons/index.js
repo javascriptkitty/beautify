@@ -28,8 +28,6 @@ const IconCard = props => {
     return (
         <div className="services-content">
             <Container>
-                <h1>Choose A Service</h1>
-                <hr />
                 <br />
                 <Row>
                     {icons.map(icon => {

@@ -1,20 +1,8 @@
 import './style.css';
-import logo from '../../assets/img/logo.png';
+import logo from '../../assets/img/logo_xs.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink
-    //   UncontrolledDropdown,
-    //   DropdownToggle,
-    //   DropdownMenu,
-    //   DropdownItem
-} from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
 
 import AppContext from '../../appContext';
 
@@ -40,10 +28,13 @@ export default class NavbarComp extends React.Component {
         return (
             <div>
                 <Navbar color="teal" light expand="md">
-                    <NavbarBrand>
-                        <img src={logo} />
-                        <Link to="/"> beautify</Link>
-                    </NavbarBrand>
+                    {/* <NavbarBrand > */}
+                    <img src={logo} />
+                    <Link to="/">
+                        {' '}
+                        <h1 className="navLogo">beautify</h1>
+                    </Link>
+                    {/* </NavbarBrand> */}
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav navbar>

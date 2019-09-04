@@ -1,51 +1,36 @@
-nav.navbar.navbar-default {
-    margin-bottom: 0;
-    background: #07ddbd;
-    color: white;
-}
-
 .navbar {
     background: #07ddbd;
-    padding: 2px;
+    padding: 5px 15px;
+    padding-bottom: 15px;
     display: flex;
-    max-height: 110px;
+    /* max-height: 110px; */
+    /* position: relative; */
 }
 
-.navbar-brand a {
+.navLogo {
     font-family: 'Sacramento', cursive !important;
-    text-decoration: none;
-    margin-left: -25px;
+    margin-top: 10px;
+    margin-left: 6px;
     color: whitesmoke;
-    font-size: 2.5em !important;
-    text-transform: lowercase;
+    font-size: 2.8em !important;
 }
 
+nav a {
+    text-decoration: none !important;
+}
 .nav-item a {
     color: whitesmoke;
-
     font-size: 1.1em !important;
     margin-right: 15px;
 }
 
 .nav-item a:hover {
-    color: white;
-    text-decoration: none;
+    text-shadow: #240935 0.1em 0.1em 0.2em;
 }
 
-.navbar-brand img {
-    margin-top: -8px;
-    width: 15%;
-    height: 15%;
-}
-
-@media (min-width: 974px) {
-    .navbar-brand img {
-        width: 13%;
-        height: 13%;
-    }
-}
-@media (max-width: 614px) {
-    .navbar-brand img {
-        text-align: center;
+@media only screen and (min-width: 768px) {
+    .navbar-collapse {
+        display: flex;
+        justify-content: flex-end;
     }
 }
