@@ -96,7 +96,7 @@ export default class CreateProvider extends Component {
                     {this.state.isProvider == false ? (
                         <Container>
                             <div className="form-content">
-                                <h1>Create New Provider</h1>
+                                <h1>New Provider</h1>
                                 <hr />
                                 {/* <br /> */}
                                 <form onSubmit={this.onSubmit}>

@@ -1,54 +1,52 @@
 {
-  "name": "project-3",
-  "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "server.js",
-  "dependencies": {
-    "axios": "^0.19.0",
-    "bcrypt-nodejs": "0.0.3",
-    "cookie-parser": "^1.4.4",
-    "express": "^4.17.1",
-    "express-session": "^1.16.2",
-    "if-env": "^1.0.4",
-    "moment": "^2.24.0",
-    "moment-timezone": "^0.5.26",
-    "mongoose": "^5.6.7",
-    "mysql2": "^1.6.5",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "rc-time-picker": "^3.7.1",
-    "react": "^16.8.6",
-    "react-date-picker": "^7.8.1",
-    "react-datepicker": "^2.8.0",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.0.1",
-    "react-scroll-into-view": "^1.5.3",
-    "reactstrap": "^8.0.1",
-    "sequelize": "^5.12.2"
-  },
-  "devDependencies": {
-    "concurrently": "^4.1.1",
-    "nodemon": "^1.19.1"
-  },
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joannebadua/group-project-3.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joannebadua/group-project-3/issues"
-  },
-  "homepage": "https://github.com/joannebadua/group-project-3#readme"
+    "name": "project-3",
+    "version": "1.0.0",
+    "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+    "main": "server.js",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "bcrypt-nodejs": "0.0.3",
+        "cookie-parser": "^1.4.4",
+        "express": "^4.17.1",
+        "express-session": "^1.16.2",
+        "if-env": "^1.0.4",
+        "moment": "^2.24.0",
+        "moment-timezone": "^0.5.26",
+        "mysql2": "^1.6.5",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0",
+        "rc-time-picker": "^3.7.1",
+        "react": "^16.8.6",
+        "react-datepicker": "^2.8.0",
+        "react-dom": "^16.8.6",
+        "react-router-dom": "^5.0.1",
+        "react-scripts": "^3.0.1",
+        "react-scroll-into-view": "^1.5.3",
+        "reactstrap": "^8.0.1",
+        "sequelize": "^5.12.2"
+    },
+    "devDependencies": {
+        "concurrently": "^4.1.1",
+        "nodemon": "^1.19.1"
+    },
+    "scripts": {
+        "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+        "start:prod": "node server.js",
+        "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+        "client": "cd client && npm run start",
+        "install": "cd client && npm install",
+        "build": "cd client && npm run build",
+        "heroku-postbuild": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/joannebadua/group-project-3.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/joannebadua/group-project-3/issues"
+    },
+    "homepage": "https://github.com/joannebadua/group-project-3#readme"
 }
