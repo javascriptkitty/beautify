@@ -36,7 +36,8 @@ button {
     background: #ffffff;
 }
 
-#services-btn {
+#services-btn,
+#form-btn {
     background: white;
     color: #07ddbd;
     margin: 5px;
@@ -45,21 +46,10 @@ button {
 	border-style: solid; */
 }
 
-#services-btn:hover {
-    background: #07ddbd;
-    color: #ffffff;
-    margin: 5px;
-}
-
+#services-btn:hover,
 #form-btn:hover {
     background: #07ddbd;
     color: #ffffff;
-    margin: 5px;
-}
-
-#form-btn {
-    background: white;
-    color: #07ddbd;
     margin: 5px;
 }
 
@@ -67,18 +57,12 @@ a {
     color: #0d968f;
 }
 
-a:hover {
-    color: white;
-}
-
+a:hover,
 #footer-links {
     color: white;
 }
 
-#footer-links:hover {
-    color: aquamarine;
-}
-
+#footer-links:hover,
 #footer-links:active {
     color: aquamarine;
 }

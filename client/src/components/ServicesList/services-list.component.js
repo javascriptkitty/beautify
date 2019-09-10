@@ -48,7 +48,7 @@ export default class ServicesList extends Component {
                                 const provider = service.providers[0];
                                 return (
                                     <ProviderCard
-                                        key={provider.id}
+                                        key={service.id}
                                         id={provider.id}
                                         name={provider.name}
                                         service={service}

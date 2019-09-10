@@ -29,7 +29,7 @@ h3 {
 .btn {
     background: rgb(78, 190, 170);
     color: white;
-    align-self: flex-end;
+    /* align-self: flex-end; */
 }
 
 .logo {

@@ -5,7 +5,7 @@ import NavbarComp from './components/Navbar';
 import ServicesList from './components/ServicesList/services-list.component';
 import CreateProvider from './components/CreateProvider/create-provider.component';
 // import CreateService from './components/create-service.component';
-import ProviderProfile from './pages/freelancerProfile';
+import ProviderProfile from './pages/providerProfile';
 import UserProfile from './pages/UserProfile';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';

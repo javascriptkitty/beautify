@@ -8,7 +8,7 @@ function ServiceCard(props) {
 
             <p> {props.description} </p>
             <p>
-                <strong>Duration:</strong>
+                <strong>Duration: </strong>
                 {props.duration} min{' '}
             </p>
             <p>

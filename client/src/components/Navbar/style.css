@@ -22,10 +22,12 @@ nav a {
     color: whitesmoke;
     font-size: 1.1em !important;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .nav-item a:hover {
     text-shadow: #240935 0.1em 0.1em 0.2em;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
