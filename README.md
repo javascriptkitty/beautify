@@ -8,11 +8,11 @@ Here's a demo of the application:
 
 -   book a services:
 
-![Site screenshort](https://github.com/javascriptkitty/beautify/blob/master/client/src/assets/img/ScreenShot1.gif)
+![Site screenshort](https://github.com/javascriptkitty/beautify/blob/master/client/src/assets/img/screenShot1.gif)
 
 -   become a provider:
 
-![Site screenshort](https://github.com/javascriptkitty/beautify/blob/master/client/src/assets/img/ScreenShot2.gif)
+![Site screenshort](https://github.com/javascriptkitty/beautify/blob/master/client/src/assets/img/screenShot2.gif)
 
 ## Technologies Used
 
