@@ -4,7 +4,7 @@ import './style.css';
 function ServiceCard(props) {
     return (
         <div className="serviceDiv">
-            <h4>{props.name}</h4>
+            <h5>{props.name}</h5>
 
             <p> {props.description} </p>
             <p>

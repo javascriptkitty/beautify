@@ -3,7 +3,7 @@ h4 {
 }
 
 h2 {
-    font-size: 1.7em;
+    font-size: 1.6em;
 }
 
 div.card-body {
@@ -30,7 +30,7 @@ button.btn.btn-secondary:hover {
     border: #9b9a9a;
     border-style: solid;
     border-width: 1px;
-    width: 90%;
+    width: 80%;
     margin: 20px;
 }
 

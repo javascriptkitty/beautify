@@ -3,35 +3,33 @@
     background-size: cover;
     background-position: center;
     position: relative;
-  }
-  
-  .hero::after {
-    content: "";
+}
+
+.hero::after {
+    content: '';
     display: block;
-    opacity: .4;
+    opacity: 0.4;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background: black;
-  }
-  
-  .hero * {
+}
+
+.hero * {
     position: relative;
     z-index: 2;
-  }
-  
-  .hero h1, .hero h2 {
+}
+
+.hero h1,
+.hero h2 {
     color: white;
-  }
-  
-  .hero h1 {
+}
+
+.hero h1 {
     font-size: 60px;
     /* margin-top: 50px; */
     padding-top: 75px;
     /* margin-top: 0; */
-  }
-  
-  
-  
+}

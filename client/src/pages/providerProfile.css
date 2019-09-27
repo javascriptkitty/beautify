@@ -1,15 +1,15 @@
 .react-datepicker__day {
-    width: 3.5rem !important;
-    line-height: 3rem !important;
+    width: 3rem !important;
+    line-height: 2.8rem !important;
 }
 
 .react-datepicker__day-name {
-    width: 3.1rem !important;
-    line-height: 3rem !important;
+    width: 2.8rem !important;
+    line-height: 2.8rem !important;
 }
 .react-datepicker__day,
 .react-datepicker__header {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .react-datepicker__current-month {
@@ -52,7 +52,6 @@ section {
 .btn {
     min-width: 88px;
     cursor: pointer;
-    margin: 5px;
 }
 
 .confirmBtn {

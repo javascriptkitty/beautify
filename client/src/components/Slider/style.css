@@ -1,14 +1,14 @@
 .img {
-    max-height: 550px;
-    height: 350px;
+    max-height: 350px;
+    height: 200px;
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .carousel-item {
-    max-height: 325px;
-    height: 300px;
+    max-height: 260px;
+    height: 250px;
     margin-top: -5px;
 
     /* background-size: cover; */
