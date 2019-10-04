@@ -6,6 +6,7 @@ const Op = Sequelize.Op;
 // Defining methods for the Controller
 module.exports = {
   create: function(req, res) {
+    debugger;
     // const provider = req.body;
     // provider.img = "no image";
     // provider.workingHours = "no working hours";

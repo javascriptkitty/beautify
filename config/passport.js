@@ -11,11 +11,13 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done){
+        debugger;
         done(null, user.id);
     });
 
     // used to deserialize the user
     passport.deserializeUser((uuid, done) => {
+        debugger;;
         db.user.findOne({where: {id: uuid}})
             .then(function(user){
                 if(user) {

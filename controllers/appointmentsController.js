@@ -59,7 +59,7 @@ module.exports = {
     const dayEnd = dayStart.clone().add(24, "hours");
     const dayEndStr = dayEnd.toDate();
 
-    debugger;
+    // debugger;;
     Promise.all([
       db.appointment.findAll({
         where: {

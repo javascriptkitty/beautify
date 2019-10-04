@@ -1,12 +1,17 @@
 USE beautifyDB;
 
-INSERT INTO users( `passportId`,`isProvider`, `createdAt`, `updatedAt`) VALUES (1,0, SYSDATE(), SYSDATE());
+INSERT INTO users( `passportId`,`isProvider`, `createdAt`, `updatedAt`) VALUES (1,1, SYSDATE(), SYSDATE());
+INSERT INTO users( `passportId`,`isProvider`, `createdAt`, `updatedAt`) VALUES (2,1, SYSDATE(), SYSDATE());
+INSERT INTO users( `passportId`,`isProvider`, `createdAt`, `updatedAt`) VALUES (3,1, SYSDATE(), SYSDATE());
+INSERT INTO users( `passportId`,`isProvider`, `createdAt`, `updatedAt`) VALUES (4,1, SYSDATE(), SYSDATE());
+INSERT INTO users( `passportId`,`isProvider`, `createdAt`, `updatedAt`) VALUES (5,1, SYSDATE(), SYSDATE());
 
-INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`) VALUES ('Kitty', 'some Kitty bio', '9:00-18:00', SYSDATE(), SYSDATE());
-INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`) VALUES ('Hallie', 'some Hallie bio', '11:00-20:00',  SYSDATE(), SYSDATE());
-INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`) VALUES ('Jerome', 'some Jerome bio', '12:00-16:00',  SYSDATE(), SYSDATE());
-INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`) VALUES ('Alton', 'some Alton bio', '12:00-16:00',  SYSDATE(), SYSDATE());
-INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`) VALUES ('Joey', 'some Joey bio', '12:00-16:00',  SYSDATE(), SYSDATE());
+
+INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`, `userId`) VALUES ('Kitty', 'some Kitty bio', '9:00-18:00', SYSDATE(), SYSDATE(), 1);
+INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`, `userId`) VALUES ('Hallie', 'some Hallie bio', '11:00-20:00',  SYSDATE(), SYSDATE(), 2);
+INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`, `userId`) VALUES ('Jerome', 'some Jerome bio', '12:00-16:00',  SYSDATE(), SYSDATE(), 3);
+INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`, `userId`) VALUES ('Alton', 'some Alton bio', '12:00-16:00',  SYSDATE(), SYSDATE(), 4);
+INSERT INTO providers(`name`, `bio`, `workingHours`,  `createdAt`, `updatedAt`, `userId`) VALUES ('Joey', 'some Joey bio', '12:00-16:00',  SYSDATE(), SYSDATE(), 5);
 
 INSERT INTO services(`name`,  `category`, `description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ( 'Men Haircut', 'hair-barber', '',  30, 65, SYSDATE(), SYSDATE());
 INSERT INTO services(`name`,  `category`,`description`,`duration`,`price`, `createdAt`, `updatedAt`) VALUES ( 'Women Haircut', 'hair-barber', 'Service includes client consultation, shampoo and blow-dry',  60, 90, SYSDATE(), SYSDATE());

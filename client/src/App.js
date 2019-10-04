@@ -22,13 +22,14 @@ import { withRouter } from 'react-router-dom';
 
 class App extends React.Component {
     state = {
+        userId: null,
         isLoggedIn: false,
         isProvider: false,
         setIsProvider: isProvider => {
             this.setState({ isProvider });
         },
         setproviderId: providerId => {
-            debugger;
+            // debugger;;
             this.setState({ providerId });
         }
     };
@@ -36,8 +37,12 @@ class App extends React.Component {
     componentDidMount() {
         axios.get('/auth/user').then(res => {
             console.log('AUTH/USER: ', res);
+            const user = res.data.user ? res.data.user : {};
+
             this.setState({
-                isLoggedIn: res.data.loggedIn
+                isLoggedIn: res.data.loggedIn,
+                isProvider: user.isProvider,
+                userId: user.id
             });
         });
     }
@@ -47,7 +52,7 @@ class App extends React.Component {
     };
 
     render() {
-        debugger;
+        // debugger;;
         const showNav = window.location.pathname != '/';
         return (
             <AppContext.Provider value={this.state}>
@@ -63,7 +68,7 @@ class App extends React.Component {
                             <Route
                                 path="/"
                                 exact
-                                component={() => <AnimatedBG logout={this.logout} />}
+                                component={() => <AnimatedBG user={this.context.user} logout={this.logout} />}
                             />
                             <Route path="/services" component={ServicesList} />
                             <Route path="/providers/new" component={CreateProvider} />
@@ -73,7 +78,7 @@ class App extends React.Component {
                             />
 
                             {/* <Route path="/provider/:id/edit" component={EditeProfile} /> */}
-                            <Route path="/user/profile" component={UserProfile} />
+                            <Route path="/user/id/:id/profile" component={UserProfile} />
                             {/* <Route path="/user" component={CreateUser} /> */}
                         </div>
                     )}

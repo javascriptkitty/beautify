@@ -2,8 +2,21 @@ import React from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
+import AppContext from '../../appContext';
 
 function AnimatedBG(props) {
+
+    const user = props.user;
+    let isProvider = false;
+    let userId = null;
+
+    if (user) {
+        isProvider = user.isProvider;
+        userId = user.id;
+    }
+
+    const myProfileLink = `/user/id/${userId}/profile`;
+
     return (
         <div>
             <section className="content">
@@ -33,12 +46,19 @@ function AnimatedBG(props) {
                             </button>
                         </Link>
 
+                        {!isProvider ? (
                         <Link to="providers/new">
                             <button className="btn btn-outline-light btn-lg" id="form-btn">
                                 BECOME A PROVIDER
                             </button>
                         </Link>
-
+                        ) : 
+                          (<Link to={myProfileLink}>
+                            <button className="btn btn-outline-light btn-lg" id="form-btn">
+                                My profile
+                            </button>
+                        </Link>
+                        ) }
                         <button
                             className="btn btn-outline-light btn-lg"
                             id="form-btn"

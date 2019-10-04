@@ -62,19 +62,19 @@ export default class CreateProvider extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        debugger;
         const provider = {
             name: this.state.name,
             bio: this.state.bio,
             workingHours: this.state.start_time + '-' + this.state.end_time,
-            isProvider: 1
+            isProvider: 1,
+            userId: this.context.userId
         };
         console.log(provider);
 
         this.context.setIsProvider(true);
 
         axios.post('/api/providers', provider).then(res => {
-            debugger;
+            // debugger;;
             this.setState({ providerId: res.data.id });
             this.context.setproviderId(res.data.id);
         });
@@ -84,22 +84,23 @@ export default class CreateProvider extends Component {
         });
     }
 
+
     render() {
+        const userURL = `/user/id/${this.context.providerId}/profile`; // здесь нужно использовать айди юзера
         return (
             <div>
                 <Wrapper>
                     <Hero backgroundImage="https://images.pexels.com/photos/457701/pexels-photo-457701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                        <h1>Beautify</h1>
-                        <h2>Create Provider</h2>
+                            <h1>New Provider</h1>
+                       
                     </Hero>
 
                     {this.state.isProvider == false ? (
                         <Container>
                             <div className="form-content">
-                                <h1>New Provider</h1>
-                                <hr />
-                                {/* <br /> */}
-                                <form onSubmit={this.onSubmit}>
+                            
+                                 <br /> 
+                                <form onSubmit={this.onSubmit.bind(this)}>
                                     <div className="form-group">
                                         <label>
                                             <h4>Provider Name: </h4>
@@ -171,7 +172,8 @@ export default class CreateProvider extends Component {
                             <Link to="/services" className="btn">
                                 Back to main{' '}
                             </Link>
-                            <Link to="/user/profile" className="btn">
+                            
+                            <Link to={userURL} className="btn">
                                 Create a service{' '}
                             </Link>
                         </Container>

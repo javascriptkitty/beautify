@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import AppContext from '../appContext.js';
 import CreateServices from '../components/Create-services';
 import { Link } from 'react-router-dom';
+import './usersProfile.css';
 
 export default class UserProfile extends Component {
     constructor(props) {
@@ -16,6 +17,7 @@ export default class UserProfile extends Component {
             appts: [],
             booked: [],
             services: [],
+            id: this.props.match.params.id,
             isCreated: false,
             isHidden: true
         };
@@ -34,37 +36,50 @@ export default class UserProfile extends Component {
         });
     }
 
-    //    loadServices= ()=> {
-    //   return axios
-    //     .get(`/api/providers/1/services`)
-    //     .then(res => {
-    //       const services = res.data;
+    loadBookedServices= ()=> {
+      return axios
+        .get(`/api/user/${this.state.id}/appointments`)
+        .then(res => {
+          const booked = res.data;
 
-    //       this.setState(
-    //         {
-    //           services
-    //         },
-    //         console.log(res.data)
-    //       );
-    //     })
-    //     .catch(err => console.log(err));
-    // };
+          this.setState(
+            {
+              booked
+            },
+            console.log(res.data)
+          );
+        })
+        .catch(err => console.log(err));
+    };
+
+    componentDidMount() {
+        this.loadBookedServices();
+      
+    }
 
     render() {
-        debugger;
+        // debugger;;
         return (
             <div>
                 <Wrapper>
-                    <Hero backgroundImage="https://images.pexels.com/photos/4614/woman-morning-bathrobe-bathroom.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                        <h1>Beautify</h1>
-                    </Hero>
+                    
                     <Container>
-                        {/* <div><h2>Upcomming appointments</h2>
-                      </div>
-                      <div><h2>Booked services</h2>
-                      </div>
-                       <div><h2>My services</h2>
-                      </div> */}
+                    <h1>Upcoming appointments</h1>
+                     <div className='allEvents'>
+                     
+                     <div className='myBooked'><h2>Booked services</h2> 
+                      {this.state.booked.map(service => {
+                          return(
+                              <div>
+                              /////
+                              </div>
+                          )
+                      })}
+                     
+                     </div>
+                     <div className='myUpcoming'><h2>My services</h2> </div>
+                     </div>
+                        
                         {/* <div>
                     
                        {this.state.isHidden||this.state.isCreated  ?
@@ -93,6 +108,8 @@ export default class UserProfile extends Component {
                                 handleClick={this.handleClick}
                             />
                         )}
+
+
                     </Container>
                 </Wrapper>
             </div>

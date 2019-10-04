@@ -25,6 +25,8 @@ export default class NavbarComp extends React.Component {
             return null;
         }
 
+        const myProfileLink = `/user/id/${this.context.userId}/profile`;
+
         return (
             <div>
                 <Navbar color="teal" light expand="md">
@@ -50,24 +52,10 @@ export default class NavbarComp extends React.Component {
                                     <Link to="/user/profile">Create service</Link>
                                 </NavItem>
                             )}
-
-                            {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
+                            <NavItem>
+                                    <Link to={myProfileLink}>My profile</Link>
+                                </NavItem>
+                            
                         </Nav>
                     </Collapse>
                 </Navbar>

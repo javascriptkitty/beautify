@@ -5,7 +5,10 @@ const passport = require("passport");
 
 
 router.get("/user", (req, res) => {
-   res.json({ loggedIn: req.isAuthenticated() });
+   res.json({ 
+      loggedIn: req.isAuthenticated(),
+      user: req.user     
+   });
 })
 
 router.post("/signup", (req, res, next) => {

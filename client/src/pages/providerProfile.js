@@ -268,7 +268,7 @@ export default class ProviderProfile extends Component {
 
                                     {this.state.services.map(service => {
                                         const url = `/providers/id/${this.state.providerId}/service/${service.id}`;
-                                        debugger;
+                                        // debugger;;
                                         return (
                                             <div className="allServices" key={service.name}>
                                                 <ServiceCard

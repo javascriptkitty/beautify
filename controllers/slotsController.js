@@ -5,7 +5,7 @@ const db = require('../db/models');
 const INCREMENT = 60;
 
 function parseProviderHours(providerHours) {
-    debugger;
+    // debugger;;
     const [start, end] = providerHours.split('-');
     return [start.split(':').map(num => parseInt(num)), end.split(':').map(num => parseInt(num))];
 }
@@ -59,7 +59,7 @@ function getTimesForWindow(windowStart, windowEnd, duration) {
 
 //console.log(getAvailabilities("2019-08-01", appointments, providerHours).map(h=>h.format()));
 function getAvailableDates(slots, service, month) {
-    debugger;
+    // debugger;;
     const slotMap = {};
     slots.forEach(slot => {
         const slotDate = moment(slot.date, 'YYYY-MM-DD')
@@ -111,7 +111,7 @@ module.exports = {
             .then(results => {
                 const service = results[0];
                 const slots = results[1];
-                debugger;
+                // debugger;;
                 const serviceRecord = service.dataValues;
                 const slotRecords = slots.map(slot => slot.dataValues);
                 const availableDates = getAvailableDates(slotRecords, serviceRecord, month);
@@ -125,7 +125,7 @@ module.exports = {
         const providerId = req.params.providerId;
         const startDate = moment(day, 'YYYY-MM-DD');
         const endDate = startDate.clone().add(1, 'day');
-        debugger;
+        // debugger;;
         Promise.all([
             db.service.findByPk(serviceId),
             db.provider.findByPk(providerId),

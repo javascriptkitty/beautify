@@ -34,6 +34,11 @@ module.exports = function(sequelize, DataTypes) {
     Provider.belongsToMany(models.service, {
       through: models.provider_service
     });
+    Provider.belongsTo(models.user, {
+     foreignKey: {
+        allowNull: false
+      }
+    });
   };
 
   return Provider;

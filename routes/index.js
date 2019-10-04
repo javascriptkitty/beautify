@@ -4,10 +4,12 @@ const servicesRoutes = require("./api/services");
 const appointmentsRoutes = require("./api/appointments");
 const providersRoutes = require("./api/providers");
 const authenticationRoutes = require('./authentification');
+const userRoutes = require("./api/users");
 
 router.use("/api", servicesRoutes);
 router.use("/api", appointmentsRoutes);
 router.use("/api", providersRoutes);
+router.use("/api", userRoutes);
 
 router.use("/auth", authenticationRoutes)
 

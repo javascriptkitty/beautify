@@ -21,7 +21,7 @@ export default class ServicesList extends Component {
     }
 
     findServicesForCategory = category => {
-        debugger;
+        // debugger;;
         return axios
             .get(`/api/services/category/${category}`)
             .then(res => {
