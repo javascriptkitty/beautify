@@ -40,6 +40,7 @@ class App extends React.Component {
             const user = res.data.user ? res.data.user : {};
 
             this.setState({
+                user,
                 isLoggedIn: res.data.loggedIn,
                 isProvider: user.isProvider,
                 userId: user.id
@@ -54,6 +55,7 @@ class App extends React.Component {
     render() {
         // debugger;;
         const showNav = window.location.pathname != '/';
+        console.log(this.state);
         return (
             <AppContext.Provider value={this.state}>
                 <Router>
@@ -68,7 +70,7 @@ class App extends React.Component {
                             <Route
                                 path="/"
                                 exact
-                                component={() => <AnimatedBG user={this.context.user} logout={this.logout} />}
+                                component={() => <AnimatedBG userId={this.state.user.id} isProvider={this.state.user.isProvider} logout={this.logout} />}
                             />
                             <Route path="/services" component={ServicesList} />
                             <Route path="/providers/new" component={CreateProvider} />

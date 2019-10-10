@@ -6,6 +6,6 @@ const usersController = require("../../controllers/usersController");
 
 router.route("/appointments").post(appointmentsController.create);
 
-router.route("/user/:id/appointments").get(usersController.findAllBooked);
+router.route("/user/:userId/appointments").get(usersController.findAllBooked);
 
 module.exports = router;

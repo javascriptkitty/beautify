@@ -27,6 +27,7 @@ export default class NavbarComp extends React.Component {
 
         const myProfileLink = `/user/id/${this.context.userId}/profile`;
 
+        debugger;
         return (
             <div>
                 <Navbar color="teal" light expand="md">

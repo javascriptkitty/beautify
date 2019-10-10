@@ -16,8 +16,8 @@ export default class UserProfile extends Component {
         this.state = {
             appts: [],
             booked: [],
-            services: [],
-            id: this.props.match.params.id,
+        
+            userId: this.props.match.params.id,
             isCreated: false,
             isHidden: true
         };
@@ -36,9 +36,9 @@ export default class UserProfile extends Component {
         });
     }
 
-    loadBookedServices= ()=> {
+    loadBookedServices= userId=> {
       return axios
-        .get(`/api/user/${this.state.id}/appointments`)
+        .get(`/api/user/${userId}/appointments`)
         .then(res => {
           const booked = res.data;
 
@@ -53,7 +53,7 @@ export default class UserProfile extends Component {
     };
 
     componentDidMount() {
-        this.loadBookedServices();
+        this.loadBookedServices(this.props.match.params.id);
       
     }
 

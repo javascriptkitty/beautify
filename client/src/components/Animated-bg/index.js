@@ -6,14 +6,7 @@ import AppContext from '../../appContext';
 
 function AnimatedBG(props) {
 
-    const user = props.user;
-    let isProvider = false;
-    let userId = null;
-
-    if (user) {
-        isProvider = user.isProvider;
-        userId = user.id;
-    }
+    const { isProvider, userId } = props;
 
     const myProfileLink = `/user/id/${userId}/profile`;
 
