@@ -10,7 +10,8 @@ import './providerProfile.css';
 import { Link } from 'react-router-dom';
 import { Hub } from '@babel/traverse';
 import ScrollIntoView from 'react-scroll-into-view';
-const moment = require('moment');
+import AppContext from '../appContext';
+import moment from 'moment';
 
 export default class ProviderProfile extends Component {
     constructor(props) {
@@ -91,11 +92,13 @@ export default class ProviderProfile extends Component {
             .add(service.duration, 'minute')
             .format();
 
+        const userId = this.context.user.id;
+        
         const appt = {
             start_time: moment(startTime).format(),
             end_time: endTime,
             providerId: this.state.providerId,
-            userId: this.state.userId,
+            userId,
             serviceId: this.state.selectedServiceId
         };
         console.log(appt);
@@ -307,3 +310,5 @@ export default class ProviderProfile extends Component {
         );
     }
 }
+
+ProviderProfile.contextType = AppContext;

@@ -7,6 +7,7 @@ import AppContext from '../appContext.js';
 import CreateServices from '../components/Create-services';
 import { Link } from 'react-router-dom';
 import './usersProfile.css';
+import moment from 'moment';
 
 export default class UserProfile extends Component {
     constructor(props) {
@@ -15,8 +16,8 @@ export default class UserProfile extends Component {
 
         this.state = {
             appts: [],
-            booked: [],
-        
+            bookings: [],
+            appointments: [],
             userId: this.props.match.params.id,
             isCreated: false,
             isHidden: true
@@ -36,28 +37,36 @@ export default class UserProfile extends Component {
         });
     }
 
+ 
     loadBookedServices= userId=> {
       return axios
         .get(`/api/user/${userId}/appointments`)
         .then(res => {
-          const booked = res.data;
-
-          this.setState(
-            {
-              booked
-            },
-            console.log(res.data)
-          );
-        })
+            debugger;
+             this.setState({
+                appointments: res.data          
+            }); 
+        })        
         .catch(err => console.log(err));
     };
 
+    loadBookings = providerId =>{
+     return axios.get(`/api/providers/${providerId}/appointments`).then(res => {
+            debugger;
+             this.setState({
+                bookings: res.data          
+            }); 
+        })        
+        .catch(err => console.log(err));
+    }
     componentDidMount() {
         this.loadBookedServices(this.props.match.params.id);
-      
+        this.loadBookings(this.props.match.params.id);
     }
 
+
     render() {
+         console.log(this.state.appointments)
         // debugger;;
         return (
             <div>
@@ -67,17 +76,20 @@ export default class UserProfile extends Component {
                     <h1>Upcoming appointments</h1>
                      <div className='allEvents'>
                      
-                     <div className='myBooked'><h2>Booked services</h2> 
-                      {this.state.booked.map(service => {
+                     <div className='myBooked'><h2>My Appointments</h2> 
+                      {this.state.appointments.map(appt => {
+
                           return(
-                              <div>
-                              /////
+                              <div key = {appt.id}>
+                              <hr />
+                             <h5><strong>{appt.service.name } </strong></h5>
+                            <p> {moment(appt.start_time).format('Do MMMM')} at {moment(appt.start_time).format('hh:mm a')}</p>
                               </div>
                           )
                       })}
                      
                      </div>
-                     <div className='myUpcoming'><h2>My services</h2> </div>
+                     <div className='myUpcoming'><h2>Bookings with me</h2> </div>
                      </div>
                         
                         {/* <div>

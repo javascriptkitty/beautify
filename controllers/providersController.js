@@ -32,6 +32,14 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
+
+  getProviderIdByUserId: function(userId) {
+    return db.provider
+        .findAll({ 
+          where:{userId}
+        });
+  },
+
   getProviderInfo: function (req, res) {
     db.provider
     .findAll({ 

@@ -2,12 +2,20 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 // const db = require("../../models");
+const providersController = require('../../controllers/providersController');
 
 
 router.get("/user", (req, res) => {
-   res.json({ 
-      loggedIn: req.isAuthenticated(),
-      user: req.user     
+   const user = req.user;
+   providersController.getProviderIdByUserId(user.id)
+   .then(provider => {
+      if (provider && provider.length) {
+         user.providerId = provider[0].id;
+      }
+      res.json({ 
+         loggedIn: req.isAuthenticated(),
+         user: req.user     
+      });
    });
 })
 

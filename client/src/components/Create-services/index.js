@@ -66,12 +66,12 @@ export default class CreateServices extends Component {
         e.preventDefault();
 
         const service = {
+            providerId: this.context.user.providerId,
             name: this.state.name,
             category: this.state.category,
             description: this.state.description,
             duration: this.state.duration,
-            price: this.state.price,
-            providerId: this.props.providerId
+            price: this.state.price
         };
 
         console.log(service);

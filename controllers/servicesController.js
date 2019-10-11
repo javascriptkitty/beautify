@@ -65,6 +65,17 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  
+  findServiceById: function(req, res) {
+    db.service
+      .findOne({
+            where: {
+              id: req.params.id
+            }
+          })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
 
     create: function(req, res) {
       let service;

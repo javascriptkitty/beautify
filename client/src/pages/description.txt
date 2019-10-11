@@ -1,0 +1,35 @@
+we created a rest api to interact with the server
+
+we can get or post to some routes (or endpoints) and get informaton back or create stuff
+
+
+
+for example 
+
+GET /users/1 returns the information for the user with id 1
+
+
+
+Describe the architecture of your application?
+We created an SPA client application using react.
+We created a REST api to interact with the server.
+We created a relation database (mysql) to persist the information
+
+How does the server work?
+We defined routes for the REST api endpoints.
+Then we have controllers that handle requests for the routes.
+The controlers intereact with the database through models (sequelize).
+And send the response back from the controllers in json format.
+
+How does the client work?
+It's a SPA. We have one html file that loads the javascript. Then we use react
+and react router for the UI. And we use axios to send REST api requests
+to the server.
+
+What's your data model for your relational database?
+TODO
+
+- what tables to you have?
+- what are the columns in your tables
+- what are the relationships (foreign keys and such)
+
