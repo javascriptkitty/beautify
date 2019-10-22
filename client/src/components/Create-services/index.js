@@ -94,8 +94,6 @@ export default class CreateServices extends Component {
             <Container>
                 {!this.state.isCreated ? (
                     <div>
-                        <h4>Post A Service Below</h4>
-                        <hr />
                         <br />
 
                         <form onSubmit={this.onSubmit}>

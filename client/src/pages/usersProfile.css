@@ -1,7 +1,22 @@
-.allEvents{
+.allEvents {
     display: flex;
-
 }
-.myBooked, .myUpcoming{
-   width:50%;
+.myBookings,
+.myAppt {
+    width: 50%;
+}
+
+.allMyServices {
+    display: flex;
+}
+.primaryBtn {
+    display: flex;
+    cursor: pointer;
+    align-items: flex-end;
+}
+.primaryBtn h4 {
+    text-decoration-line: underline;
+}
+
+.primaryBtn span {
 }

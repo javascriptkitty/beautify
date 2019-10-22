@@ -1,0 +1,13 @@
+.nav-link:active {
+    background-color: rgb(142, 120, 174);
+    color: black !important;
+}
+.dropdown-toggle .nav-link {
+    color: black !important;
+}
+.dropdown-item a {
+    color: black !important;
+}
+.nav-link {
+    color: black !important;
+}

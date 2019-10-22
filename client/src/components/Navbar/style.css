@@ -25,6 +25,9 @@ nav a {
     cursor: pointer;
 }
 
+.nav-item {
+    text-align: right;
+}
 .nav-item a:hover {
     text-shadow: #240935 0.1em 0.1em 0.2em;
     cursor: pointer;

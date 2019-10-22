@@ -54,9 +54,8 @@ export default class NavbarComp extends React.Component {
                                 </NavItem>
                             )}
                             <NavItem>
-                                    <Link to={myProfileLink}>My profile</Link>
-                                </NavItem>
-                            
+                                <Link to={myProfileLink}>My profile</Link>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>

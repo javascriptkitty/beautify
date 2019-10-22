@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-function ServiceCard(props) {
+const ServiceCard = props => {
     return (
         <div className="serviceDiv">
             <h5>{props.name}</h5>
@@ -17,6 +17,6 @@ function ServiceCard(props) {
             </p>
         </div>
     );
-}
+};
 
 export default ServiceCard;
