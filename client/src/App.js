@@ -98,7 +98,10 @@ class App extends React.Component {
                                 path="/user/id/:id/profile/appointments"
                                 render={props => <UserProfile {...props} tab="appointments" />}
                             />
-                            <Route path="/user/id/:id/profile/bookings" component={UserBookings} />
+                            <Route
+                                path="/user/id/:id/profile/bookings"
+                                render={props => <UserProfile {...props} tab="bookings" />}
+                            />
                         </div>
                     )}
                 </Router>

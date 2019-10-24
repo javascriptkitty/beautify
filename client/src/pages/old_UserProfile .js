@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Container from '../components/Container';
 import Wrapper from '../components/Wrapper';
+import Hero from '../components/Hero';
 import AppContext from '../appContext.js';
 import Popup from '../components/Popup';
-
+import UserServ from '../components/UserServices';
+import NavComp from '../components/Nav';
+import UserAppts from '../components/UserAppts';
+import UserBookings from '../components/UserBookings';
+import UserInfo from '../components/UserInfo';
 import './usersProfile.css';
+import moment from 'moment';
 import Tabs from '../components/Tabs';
 
 export default class UserProfile extends Component {
@@ -84,16 +90,39 @@ export default class UserProfile extends Component {
         console.log(this.state.bookings);
         console.log(this.state.info);
 
+        let appointmentsComponent;
+        let bookingsComponent;
+        let servicesComponent;
+        let userInfoComponent;
+
+        if (!this.props.tab) {
+            userInfoComponent = <UserInfo info={this.state.info} />;
+        }
+        if (this.props.tab === 'appointments') {
+            appointmentsComponent = <UserAppts appointments={this.state.appointments} />;
+        } else if (this.props.tab === 'bookings') {
+            debugger;
+            bookingsComponent = <UserBookings bookings={this.state.bookings} />;
+        } else if (this.props.tab === 'services') {
+            servicesComponent = (
+                <div className="myServ">
+                    <UserServ services={this.state.info.services} />
+
+                    <Popup buttonLabel="Add a service" />
+                </div>
+            );
+        }
+
         return (
             <div>
                 <Wrapper>
                     <Container>
-                        <Tabs
-                            userId={this.context.userId}
-                            info={this.state.info}
-                            appointments={this.state.appointments}
-                            bookings={this.state.bookings}
-                        />
+                        <NavComp userId={this.context.userId} />
+                        {userInfoComponent}
+                        {appointmentsComponent}
+                        {bookingsComponent}
+                        {servicesComponent}
+                        <br />
                     </Container>
                 </Wrapper>
             </div>

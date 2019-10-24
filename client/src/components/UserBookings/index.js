@@ -3,6 +3,9 @@ import moment from 'moment';
 //import './style.css';
 
 const UserBookings = props => {
+    if (!props.bookings) {
+        return null;
+    }
     return (
         <div className="myBookings">
             <h2>Bookings with me</h2>

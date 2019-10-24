@@ -18,14 +18,20 @@ const NavComp = props => {
     const toggle = () => setDropdownOpen(!dropdownOpen);
 
     const userProfileAppt = `/user/id/${props.userId}/profile/appointments`;
+    const userProfileBookings = `/user/id/${props.userId}/profile/bookings`;
+    const userProfileServices = `/user/id/${props.userId}/profile/services`;
+    const userProfileInfo = `/user/id/${props.userId}/profile`;
 
     return (
         <div>
             <Nav tabs>
                 <NavItem>
-                    <NavLink href="#" active>
+                    <NavLink href={userProfileInfo} active>
                         Info
                     </NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href={userProfileServices}>My Services</NavLink>
                 </NavItem>
                 <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle nav caret>
@@ -37,14 +43,10 @@ const NavComp = props => {
                         </DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem>
-                            <Link to="#">Bookings with me</Link>
+                            <Link to={userProfileBookings}>Bookings with me</Link>
                         </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
-
-                <NavItem>
-                    <NavLink href="#">My services</NavLink>
-                </NavItem>
             </Nav>
         </div>
     );

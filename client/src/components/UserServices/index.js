@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
-//import './style.css';
+import React from 'react';
+import { CardBody, Card } from 'reactstrap';
+import './style.css';
 
 const UserServ = props => {
-    const [collapse, setCollapse] = useState(false);
-
-    const toggle = () => setCollapse(!collapse);
-
     const services = props.services
         ? props.services.map(service => {
               return (
@@ -14,7 +10,9 @@ const UserServ = props => {
                       <CardBody>
                           <div className="myService" key={service.id}>
                               <div className="myServiceInfo">
-                                  <h5>{service.name}</h5>
+                                  <h4>
+                                      <strong>{service.name}</strong>
+                                  </h4>
                                   <p>
                                       <strong>Description: </strong>
                                       {service.description}
@@ -51,10 +49,9 @@ const UserServ = props => {
 
     return (
         <div>
-            <a className="primaryBtn" onClick={toggle} style={{ marginBottom: '1rem' }}>
-                <h4>My services </h4> <span>▼</span>
-            </a>
-            <Collapse isOpen={collapse}>{services}</Collapse>
+            <br />
+
+            {services}
         </div>
     );
 };

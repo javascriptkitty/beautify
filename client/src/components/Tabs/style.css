@@ -1,0 +1,36 @@
+.tab-content {
+    border: 1px solid lightgrey !important;
+    margin: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white !important;
+}
+
+.nav-link.active {
+    background-color: lightgrey !important;
+}
+.tabDiv {
+    background-color: lightgrey;
+    padding-bottom: 10px;
+    height: 100vh;
+    border-radius: 0 0 8px 8px !important;
+}
+.nav-tabs {
+    background-color: white !important;
+
+    position: relative;
+}
+.infoName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.editIcon {
+    display: inline-block;
+    transform: rotateZ(90deg);
+    margin-right: 10px;
+    font-size: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    padding: 4px 9px;
+}

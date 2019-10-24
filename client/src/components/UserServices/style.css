@@ -1,0 +1,22 @@
+.myService {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.myServiceButtons {
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px 0;
+    justify-content: space-around;
+}
+.myServiceInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+}
+
+.card {
+    max-width: 550px;
+}
